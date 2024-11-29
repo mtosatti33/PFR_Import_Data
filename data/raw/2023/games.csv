@@ -15,6 +15,7 @@ Week,Day,Date,Time,Winner/tie,,Loser/tie,,PtsW,PtsL,YdsW,TOW,YdsL,TOL
 1,Sun,2023-09-10,4:25PM,Los Angeles Rams,@,Seattle Seahawks,boxscore,30,13,426,0,180,0
 1,Sun,2023-09-10,8:20PM,Dallas Cowboys,@,New York Giants,boxscore,40,0,265,0,171,3
 1,Mon,2023-09-11,8:15PM,New York Jets,,Buffalo Bills,boxscore,22,16,289,1,314,4
+Week,Day,Date,Time,Winner/tie,,Loser/tie,,PtsW,PtsL,YdsW,TOW,YdsL,TOL
 2,Thu,2023-09-14,8:15PM,Philadelphia Eagles,,Minnesota Vikings,boxscore,34,28,430,1,374,4
 2,Sun,2023-09-17,1:00PM,Atlanta Falcons,,Green Bay Packers,boxscore,25,24,446,1,224,0
 2,Sun,2023-09-17,1:00PM,Buffalo Bills,,Las Vegas Raiders,boxscore,38,10,450,0,240,3
@@ -271,6 +272,7 @@ Week,Day,Date,Time,Winner/tie,,Loser/tie,,PtsW,PtsL,YdsW,TOW,YdsL,TOL
 18,Sun,2024-01-07,4:25PM,New York Giants,,Philadelphia Eagles,boxscore,27,10,415,1,299,4
 18,Sun,2024-01-07,4:25PM,Los Angeles Rams,@,San Francisco 49ers,boxscore,21,20,258,1,300,1
 18,Sun,2024-01-07,8:20PM,Buffalo Bills,@,Miami Dolphins,boxscore,21,14,473,3,275,2
+,,Playoffs,,,,,,,,,,,
 WildCard,Sat,2024-01-13,4:30PM,Houston Texans,,Cleveland Browns,boxscore,45,14,356,0,324,2
 WildCard,Sat,2024-01-13,8:10PM,Kansas City Chiefs,,Miami Dolphins,boxscore,26,7,409,1,264,1
 WildCard,Sun,2024-01-14,4:30PM,Green Bay Packers,@,Dallas Cowboys,boxscore,48,32,415,0,510,2
