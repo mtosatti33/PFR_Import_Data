@@ -78,8 +78,8 @@ def move():
     clean_remaining_data()
 
 if __name__ == "__main__":
-    #recreate()
-    #scraping_rosters()
+    recreate()
+    scraping_rosters()
     scraping_team_stats()
     scraping_player_stats()
     scraping_general_data()
