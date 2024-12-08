@@ -7,11 +7,9 @@ import pandas as pd
 import os
 import glob
 import logging
-from datetime import datetime
 from pathlib import Path
 
-from folders import *
-from moving_list import *
+from config import *
 # Funções
 # ------------------------------------------------------------------------------------------------
 def scraping_data(url, attrs, file, is_data_append_csv = False, is_append_team = False, data_show=None):
@@ -29,7 +27,6 @@ def scraping_data(url, attrs, file, is_data_append_csv = False, is_append_team =
     rows = driver.find_elements(By.XPATH, f'//*[contains(@id,"{attrs}")]//tr[not(contains(@class, "over_header"))]')
 
     # Iterar pelas linhas da tabela
-
     for row in rows:
         # Capturar os dados da linha
         data = [item.text for item in row.find_elements(By.XPATH, ".//*[self::td or self::th]")]
@@ -60,6 +57,7 @@ def scraping_data(url, attrs, file, is_data_append_csv = False, is_append_team =
     if is_append_team:
         df["Team"] = file.split('.')[0]
         
+    # Exclui duplicadas
     df = df.drop_duplicates()
 
     # Salvar como CSV
@@ -79,6 +77,7 @@ def click_element(driver, attr):
     except Exception as e:
         print(f"Erro ao clicar no elemento com 'data-show={attr}': {e}")
 
+# ------------------------------------------------------------------------------------------------
 def move_files():
     nome_arquivo = 'log.txt'
 
@@ -110,8 +109,6 @@ def move_files():
 
             logging.error(log)
                 
-
-
 # ------------------------------------------------------------------------------------------------
 def concat_dfs():
     files = glob.glob("*.csv")
@@ -126,10 +123,23 @@ def concat_dfs():
     
 # ------------------------------------------------------------------------------------------------
 def recreate_folders():
-    for folder in folders:
-        Path(folder).mkdir(parents=True, exist_ok=True) 
+    if not os.path.exists('data'):
+        for folder in folders:
+            Path(folder).mkdir(parents=True, exist_ok=True)
+        generate_teams_csv()
 
+# ------------------------------------------------------------------------------------------------
 def clean_remaining_data():
     files = glob.glob("*.csv")
     for file in files:
         os.remove(file)
+
+# ------------------------------------------------------------------------------------------------
+def generate_teams_csv():
+    df = pd.DataFrame(teams_csv)
+    
+    df.columns = df.iloc[0]  # Define a segunda linha como cabeçalho
+    df = df[1:]  # Exclui as duas primeiras linhas
+    df = df.reset_index(drop=True)  # Reseta o índice
+
+    df.to_csv("data/raw/teams.csv", sep=';',index=False)

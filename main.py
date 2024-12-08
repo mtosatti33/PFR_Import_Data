@@ -1,13 +1,10 @@
 from urls import *
 from functions import *
-from items import *
 from config import *
-from files import *
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 def recreate():
-    if not os.path.exists('data'):
-        recreate_folders()
+    recreate_folders()
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 def scraping_rosters():
