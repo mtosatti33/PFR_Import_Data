@@ -4,3 +4,4 @@ data_2/
 *.zip
 __pycache__/
 log.txt
+*.ipynb

@@ -6,7 +6,7 @@ teams = {
     'buf': 'BUF', 'mia': 'MIA', 'nwe': 'NWE', 'nyj': 'NYJ',
     'pit': 'PIT', 'rav': 'BAL', 'cin': 'CIN', 'cle': 'CLE',
     'htx': 'HOU', 'clt': 'IND', 'oti': 'TEN', 'jax': 'JAX', 
-    'kan': 'KAN', 'sdg': 'LAC', 'den': 'DEN', 'rai': 'LVR',
+    'kan': 'KAN', 'sdg': 'LAC', 'den': 'DEN', 'rai': 'RAI',
     'phi': 'PHI', 'was': 'WAS', 'dal': 'DAL', 'nyg': 'NYG',
     'det': 'DET', 'min': 'MIN', 'gnb': 'GNB', 'chi': 'CHI',
     'atl': 'ATL', 'tam': 'TAM', 'nor': 'NOR', 'car': 'CAR',
