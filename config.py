@@ -1,6 +1,6 @@
 # MAIN CONFIG
 # -------------------------------------------------------------------------------------------------------
-year = 2018
+year = 2014
 is_finished = True
 
 is_roster_scraped = True
@@ -14,11 +14,11 @@ teams = {
     'buf': 'BUF', 'mia': 'MIA', 'nwe': 'NWE', 'nyj': 'NYJ',
     'pit': 'PIT', 'rav': 'BAL', 'cin': 'CIN', 'cle': 'CLE',
     'htx': 'HOU', 'clt': 'IND', 'oti': 'TEN', 'jax': 'JAX', 
-    'kan': 'KAN', 'sdg': 'LAC', 'den': 'DEN', 'rai': 'RAI',
+    'kan': 'KAN', 'sdg': 'SDG', 'den': 'DEN', 'rai': 'RAI',
     'phi': 'PHI', 'was': 'WAS', 'dal': 'DAL', 'nyg': 'NYG',
     'det': 'DET', 'min': 'MIN', 'gnb': 'GNB', 'chi': 'CHI',
     'atl': 'ATL', 'tam': 'TAM', 'nor': 'NOR', 'car': 'CAR',
-    'crd': 'ARI', 'ram': 'LAR', 'sea': 'SEA', 'sfo': 'SFO'
+    'crd': 'ARI', 'ram': 'RAM', 'sea': 'SEA', 'sfo': 'SFO'
 }
 
 #TODO: Melhorar isto
@@ -43,8 +43,8 @@ teams_csv = [
     ['JAX','Jacksonville Jaguars','AFC','South'],
     ['KAN','Kansas City Chiefs','AFC','West'],
     ['RAI','Las Vegas Raiders','AFC','West'],
-    ['LAC','Los Angeles Chargers','AFC','West'],
-    ['LAR','Los Angeles Rams','NFC','West'],
+    ['SDG','Los Angeles Chargers','AFC','West'],
+    ['RAM','Los Angeles Rams','NFC','West'],
     ['MIA','Miami Dolphins','AFC','East'],
     ['MIN','Minnesota Vikings','NFC','North'],
     ['NWE','New England Patriots','AFC','East'],
