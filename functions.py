@@ -58,7 +58,7 @@ def scraping_data(url, attrs, file, is_data_append_csv = False, is_append_team =
     df = df.reset_index(drop=True)  # Reseta o índice
 
     if is_append_team:
-        df["Team"] = file
+        df["Team"] = file.split('.')[0]
         
     df = df.drop_duplicates()
 

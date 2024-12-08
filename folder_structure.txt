@@ -9,11 +9,6 @@ data
         |Schedule
         |Stats
             |Player
-                |advanced
-                    |passing
-                    |rushing
-                    |receiving
-                    |defense
                 |defense
                 |kicking
                 |passing
@@ -22,15 +17,6 @@ data
                 |returns
                 |rushing
             |Team
-                |advanced
-                    |passing
-                        |accuracy
-                        |air yards
-                        |play type
-                        |pressure
-                    |rushing
-                    |receiving
-                    |defense
                 |offense
                     |drives
                     |kicking
