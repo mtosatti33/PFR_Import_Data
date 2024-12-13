@@ -1,7 +1,8 @@
 # MAIN CONFIG
 # -------------------------------------------------------------------------------------------------------
-year = 2014
-is_finished = True
+import datetime
+year = 2024
+is_finished = datetime.date.today().year == year
 
 is_roster_scraped = True
 is_player_scraped = True
@@ -25,39 +26,39 @@ teams = {
 # TEAMS TO CSV
 # -------------------------------------------------------------------------------------------------------
 teams_csv = [
-    ['Tm','Name','Conference','Division'],
-    ['ARI','Arizona Cardinals','NFC','West'],
-    ['ATL','Atlanta Falcons','NFC','South'],
-    ['BAL','Baltimore Ravens','AFC','North'],
-    ['BUF','Buffalo Bills','AFC','East'],
-    ['CAR','Carolina Panthers','NFC','South'],
-    ['CHI','Chicago Bears','NFC','North'],
-    ['CIN','Cincinnati Bengals','AFC','North'],
-    ['CLE','Cleveland Browns','AFC','North'],
-    ['DAL','Dallas Cowboys','NFC','East'],
-    ['DEN','Denver Broncos','AFC','West'],
-    ['DET','Detroit Lions','NFC','North'],
-    ['GNB','Green Bay Packers','NFC','North'],
-    ['HOU','Houston Texans','AFC','South'],
-    ['IND','Indianapolis Colts','AFC','South'],
-    ['JAX','Jacksonville Jaguars','AFC','South'],
-    ['KAN','Kansas City Chiefs','AFC','West'],
-    ['RAI','Las Vegas Raiders','AFC','West'],
-    ['SDG','Los Angeles Chargers','AFC','West'],
-    ['RAM','Los Angeles Rams','NFC','West'],
-    ['MIA','Miami Dolphins','AFC','East'],
-    ['MIN','Minnesota Vikings','NFC','North'],
-    ['NWE','New England Patriots','AFC','East'],
-    ['NOR','New Orleans Saints','NFC','South'],
-    ['NYG','New York Giants','NFC','East'],
-    ['NYJ','New York Jets','AFC','East'],
-    ['PHI','Philadelphia Eagles','NFC','East'],
-    ['PIT','Pittsburgh Steelers','AFC','North'],
-    ['SFO','San Francisco 49ers','NFC','West'],
-    ['SEA','Seattle Seahawks','NFC','West'],
-    ['TAM','Tampa Bay Buccaneers','NFC','South'],
-    ['TEN','Tennessee Titans','AFC','South'],
-    ['WAS','Washington Commanders','NFC','East']
+    ['Tm','Team','City','State','Conference','Division','Lat','Long'],
+    ['ARI','Arizona Cardinals','Glendale',' Arizona','NFC','West','33,50805556','-112,2877778'],
+    ['ATL','Atlanta Falcons','Atlanta',' Georgia','NFC','South','33,75444444','-84,39055556'],
+    ['BAL','Baltimore Ravens','Baltimore',' Maryland','AFC','North','39,28861111','-76,62222222'],
+    ['BUF','Buffalo Bills','Orchard Park',' New York','AFC','East','42,92194444','-78,74222222'],
+    ['CAR','Carolina Panthers','Charlotte',' North Carolina','NFC','South','35,22944444','-80,90611111'],
+    ['CHI','Chicago Bears','Chicago',' Illinois','NFC','North','41,8825','-87,63916667'],
+    ['CIN','Cincinnati Bengals','Cincinnati',' Ohio','AFC','North','39,16083333','-84,5175'],
+    ['CLE','Cleveland Browns','Cleveland',' Ohio','AFC','North','41,50416667','-81,68138889'],
+    ['DAL','Dallas Cowboys','Arlington',' Texas','NFC','East','32,73805556','-97,12416667'],
+    ['DEN','Denver Broncos','Denver',' Colorado','AFC','West','39,75916667','-104,9811111'],
+    ['DET','Detroit Lions','Detroit',' Michigan','NFC','North','42,39055556','-83,08166667'],
+    ['GNB','Green Bay Packers','Green Bay',' Wisconsin','NFC','North','44,86111111','-88,03055556'],
+    ['HOU','Houston Texans','Houston',' Texas','AFC','South','29,76333333','-95,37055556'],
+    ['IND','Indianapolis Colts','Indianapolis',' Indiana','AFC','South','39,96416667','-86,17666667'],
+    ['JAX','Jacksonville Jaguars','Jacksonville',' Florida','AFC','South','30,32222222','-81,62861111'],
+    ['KAN','Kansas City Chiefs','Kansas City',' Missouri','AFC','West','39,16194444','-94,58777778'],
+    ['RAI','Las Vegas Raiders','Paradise',' Nevada','AFC','West','36,1425','-115,3163889'],
+    ['SDG','Los Angeles Chargers','Inglewood',' California','AFC','West','33,93','-118,3641667'],
+    ['RAM','Los Angeles Rams','Inglewood',' California','NFC','West','33,93','-118,3641667'],
+    ['MIA','Miami Dolphins','Miami Gardens',' Florida','AFC','East','25,97555556','-80,22138889'],
+    ['MIN','Minnesota Vikings','Minneapolis',' Minnesota','NFC','North','44,97972222','-93,25555556'],
+    ['NWE','New England Patriots','Foxborough',' Massachusetts','AFC','East','42,11694444','-71,21583333'],
+    ['NOR','New Orleans Saints','New Orleans',' Louisiana','NFC','South','29,95138889','-90,07'],
+    ['NYG','New York Giants','East Rutherford',' New Jersey','NFC','East','40,84083333','-74,13833333'],
+    ['NYJ','New York Jets','East Rutherford',' New Jersey','AFC','East','40,84083333','-74,13833333'],
+    ['PHI','Philadelphia Eagles','Philadelphia',' Pennsylvania','NFC','East','40','-75,21666667'],
+    ['PIT','Pittsburgh Steelers','Pittsburgh',' Pennsylvania','AFC','North','40,4375','-79,97861111'],
+    ['SFO','San Francisco 49ers','Santa Clara',' California','NFC','West','37,4125','-121,9055556'],
+    ['SEA','Seattle Seahawks','Seattle',' Washington','NFC','West','47,60305556','-122,3475'],
+    ['TAM','Tampa Bay Buccaneers','Tampa',' Florida','NFC','South','27,93666667','-82,595'],
+    ['TEN','Tennessee Titans','Nashville',' Tennessee','AFC','South','36,16611111','-86,80444444'],
+    ['WAS','Washington Commanders','Landover',' Maryland','NFC','East','38,94555556','-76,94833333']
 ]
 
 # FOLDERS

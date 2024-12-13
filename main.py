@@ -1,7 +1,8 @@
 from urls import *
 from functions import *
 from config import *
-
+#TODO: Criar um README.MD
+#TODO: Documentar melhor o código
 # ----------------------------------------------------------------------------------------------------------------------------------
 def recreate():
     recreate_folders()
@@ -54,11 +55,6 @@ def scraping_general_data():
         # Schedules
         scraping_data(URL_SCHEDULES.format(year), 'games', games)
 
-# ----------------------------------------------------------------------------------------------------------------------------------
-def move():
-    move_files()
-
-    clean_remaining_data()
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 def main():
@@ -67,7 +63,7 @@ def main():
     scraping_team_stats()
     scraping_player_stats()
     scraping_general_data()
-    move()
+    move_files()
 
 if __name__ == "__main__":
     main()

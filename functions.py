@@ -79,10 +79,8 @@ def click_element(driver, attr):
 
 # ------------------------------------------------------------------------------------------------
 def move_files():
-    nome_arquivo = 'log.txt'
-
     logging.basicConfig(
-        filename=nome_arquivo,
+        filename='log.txt',
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         filemode='a'
@@ -108,6 +106,8 @@ def move_files():
             print(log)
 
             logging.error(log)
+
+    clean_remaining_data()
                 
 # ------------------------------------------------------------------------------------------------
 def concat_dfs():
