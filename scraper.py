@@ -5,15 +5,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import os
-import glob
-import logging
-from pathlib import Path
+import requests
 
 from config import *
 # Funções
 # ------------------------------------------------------------------------------------------------
 def scraping_data(url, attrs, file, is_data_append_csv = False, is_append_team = False, data_show=None):
-    driver = webdriver.Chrome()
+    print(f'Scraping {file} from link {url}')
+    # Configurar o WebDriver (exemplo com Chrome)
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome(options=options)
+    
     url = url
     driver.get(url)
     time.sleep(2)
@@ -78,68 +81,46 @@ def click_element(driver, attr):
         print(f"Erro ao clicar no elemento com 'data-show={attr}': {e}")
 
 # ------------------------------------------------------------------------------------------------
-def move_files():
-    logging.basicConfig(
-        filename='log.txt',
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        filemode='a'
-    )
-    for src_file, dest_file in FILES_TO_MOVE.items():
-        origem = Path(src_file)
-        destino = Path(dest_file)
+def download_logo(url, _team = None):
+    # Configurar o WebDriver (exemplo com Chrome)
+    driver = webdriver.Chrome()
 
-        # Criar diretório de destino (se necessário)
-        destino.parent.mkdir(parents=True, exist_ok=True)
+    # Abrir a URL da página
+    url_pagina = url
+    driver.get(url_pagina)
 
-        try:
-            origem.rename(destino)
-            print(f"Arquivo '{src_file}' movido para '{dest_file}'")
-        except FileNotFoundError:
-            log = f"Arquivo '{src_file}' não encontrado."
-            print(log)
-
-            logging.error(log)
-
-        except Exception as e:
-            log = f"Erro ao mover '{src_file}': {e}"
-            print(log)
-
-            logging.error(log)
-
-    clean_remaining_data()
-                
-# ------------------------------------------------------------------------------------------------
-def concat_dfs():
-    files = glob.glob("*.csv")
-    dfs = []
-
-    for file in files:
-        df = pd.read_csv(file, sep=';')
-        dfs.append(df)
+    # Localizar o elemento da imagem pelo seletor de classe
+    try:
+        # Localiza o elemento da imagem
+        img_element = driver.find_element(By.XPATH, "//img[@class='teamlogo']")
         
-    df_new = pd.concat(dfs,ignore_index=True)
-    df_new.to_csv("rosters.csv", index=False, sep=';')
-    
-# ------------------------------------------------------------------------------------------------
-def recreate_folders():
-    if not os.path.exists('data'):
-        for folder in folders:
-            Path(folder).mkdir(parents=True, exist_ok=True)
-        generate_teams_csv()
+        # Extrai o URL da imagem (atributo 'src')
+        img_url = img_element.get_attribute("src")
+        print(f"URL da imagem: {img_url}")
 
-# ------------------------------------------------------------------------------------------------
-def clean_remaining_data():
-    files = glob.glob("*.csv")
-    for file in files:
-        os.remove(file)
+        # Nome do arquivo local
+        if _team is not None:
+            nome_arquivo = f"{_team}.png"
+        else:
+            nome_arquivo = "NFL.png"
 
-# ------------------------------------------------------------------------------------------------
-def generate_teams_csv():
-    df = pd.DataFrame(teams_csv)
-    
-    df.columns = df.iloc[0]  # Define a segunda linha como cabeçalho
-    df = df[1:]  # Exclui as duas primeiras linhas
-    df = df.reset_index(drop=True)  # Reseta o índice
+        diretorio = TEAM_LOGOS
+        os.makedirs(diretorio, exist_ok=True)  # Cria o diretório, se necessário
 
-    df.to_csv("data/raw/teams.csv", sep=';',index=False)
+        caminho_completo = os.path.join(diretorio, nome_arquivo)
+
+        # Fazer o download da imagem
+        response = requests.get(img_url, stream=True)
+        response.raise_for_status()  # Verifica se houve erro no download
+        
+        with open(caminho_completo, "wb") as file:
+            for chunk in response.iter_content(1024):  # Salva em pedaços
+                file.write(chunk)
+
+        print(f"Imagem salva em: {caminho_completo}")
+        
+    except Exception as e:
+        print(f"Erro ao baixar a imagem: {e}")
+
+    # Fechar o navegador
+    driver.quit()

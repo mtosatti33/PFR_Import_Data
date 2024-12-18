@@ -1,7 +1,12 @@
 # URLs
 # -------------------------------------------------------------------------------------------------------
+# Uso Futuro
+URL_TEAM = 'https://www.pro-football-reference.com/teams/{}/{}.htm'
+URL_LEAGUE = "https://www.pro-football-reference.com/years/{}/"
+
 # Rosters
 URL_ROSTER = 'https://www.pro-football-reference.com/teams/{}/{}_roster.htm'
+URL_TEAM_GAMELOGS = 'https://www.pro-football-reference.com/teams/{}/{}/gamelog/'
 
 # Team Normal Stats
 URL_TEAM_OFFENSE = "https://www.pro-football-reference.com/years/{}/"

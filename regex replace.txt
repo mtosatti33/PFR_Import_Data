@@ -1,0 +1,41 @@
+
+# teams
+New Orleans Saints;                              NOR
+Jacksonville Jaguars;                            JAX
+Houston Texans;                                  HOU
+New England Patriots;                            NWE
+Cleveland Browns;                                CLE
+Tampa Bay Buccaneers;                            TAM
+Pittsburgh Steelers;                             PIT
+Atlanta Falcons;                                 ATL
+Indianapolis Colts;                              IND
+Miami Dolphins;                                  MIA
+Green Bay Packers;                               GNB
+Cincinnati Bengals;                              CIN
+Tennessee Titans;                                TEN
+Minnesota Vikings;                               MIN
+(San Diego|Los Angeles) Chargers;                SDG
+Baltimore Ravens;                                BAL
+Dallas Cowboys;                                  DAL
+(St. Louis|Los Angeles) Rams;                    RAM
+Buffalo Bills;                                   BUF
+Kansas City Chiefs;                              KAN
+Detroit Lions;                                   DET
+Seattle Seahawks;                                SEA
+Philadelphia Eagles;                             PHI
+San Francisco 49ers;                             SFO
+Chicago Bears;                                   CHI
+Carolina Panthers;                               CAR
+Denver Broncos;                                  DEN
+New York Jets;                                   NYJ
+New York Giants;                                 NYG
+Washington (Redskins|Football Team|Commanders);  WAS
+Arizona Cardinals;                               ARI
+(Oakland|Las Vegas) Raiders;                     RAI
+
+# Remover linhas vazias
+^(?:[\t ]*(?:\r?\n|\r))+
+
+# Trocar ponto por virgula
+(\d+)\.(\d+)                                    $1,$2 #VsCode
+(\d+)\.(\d+)                                    \1,\2 #Outros

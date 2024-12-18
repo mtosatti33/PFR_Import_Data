@@ -6,6 +6,9 @@ data
         |Coaches
         |Draft
         |Rosters
+        |Gamelogs
+            |Opp
+            |Team
         |Schedule
         |Stats
             |Player
@@ -37,3 +40,6 @@ data
                     |team_conversions
                     |team_scoring
                     |team_stats
+
+img
+    |logos
